@@ -7,6 +7,8 @@
 void main() {
   //هنا رح نكتب مجموعة الأكواد أو الأوامر يعني أول ما نشوف أقواس كيرلي رح تعرف انه هنا بينكتب الكود تبع الميثود
   // لازم هنا نكتب اشياء هي pre defined يعني شغلات معرّفة لدى المترجم او تعتبر من قواعد او قوانين لغة المترجم
+  // scope for new codes يعني سكوب بين الاقواس المتعرجة بيكون جواته اوامر برمجية و اكواد و ممكن السكوب يعملك مشاكل لما تكون طالع من السكوب الداخلي للخارجي و العكس ف كتير مهم ننتبه ع الاقواس و نسكر كل سكوب قبل ما ننتقل للسكوب التاني
+  // خصوصا في ال if conditions
   ///print('My name is Aml');
 
   //variables
@@ -69,21 +71,170 @@ void main() {
 
   int result = number1 ~/ number2;
   double resultDouble = number1 / number2;
-  int resultRemainder= number1 % number2;
+  int resultRemainder = number1 % number2;
 
   print(result);
   print(resultDouble);
   print(resultRemainder);
 
-
-
   ///Dot Operator
-  // String dotOp = 'amal';
-  // print(dotOp.);
-  // ///بيوفرلك بعض المهام اللي ممكن تقوم فيها على القيمة هاي او بيوفرلك بعض المعلومات اللي ممكن استعلمها عن القيمة هاي
+  //  String dotOp = 'amal';
+  //  print(dotOp.toUpperCase());
+  // / ///بيوفرلك بعض المهام اللي ممكن تقوم فيها على القيمة هاي او بيوفرلك بعض المعلومات اللي ممكن استعلمها عن القيمة هاي
+  // , و على اساس الداتا تايب اللي انت مستعملها هو هيحددلك المعلومات و المهام اللي نقدر نعملها و نعرفها عن الفاريبل
 
-  
   // collection data types
+  //(List, Map, Set)
+  //for multiple values with the same data type
+  List<String> studentsNames = ['amal', 'asmaa', 'maha'];
+  // [0,1,2] هيك بيكونو مخزنين ك اندكسز
+  print(studentsNames[0]);
+  // [0,,,,,, n-1] ====>> length =n
+  print(studentsNames.length);
+  //تسمح بالتكرار
+  studentsNames.add('areej');
+  print(studentsNames);
+  studentsNames.remove('areej');
+  print(studentsNames);
+  //Set ==>> curly brackets
+  //do not repeat data (it only allows a unique data)
+  Set<String> sistersNames = {'AML', 'ASMAA', 'Maha'};
+
+  /// Set<String> namesRepeated = {'AML','AML', 'ASMAA', 'Maha'};
+  print(sistersNames);
+  sistersNames.add('Heba');
+  print(sistersNames);
+
+  ///Map
+  Map<String, num> ages = {'ahmed': 14, 'amal': 23};
+  print(ages['ahmed']);
+  print(ages['amal']);
+
+  ///  you search by the unique identifier (Key) which is the 'ahmed'
+  //you cant repeate the unique ID or the Key (key: value)
+  Map<int, int> numberOfSeats = {4: 150, 5: 140, 3: 24};
+  print(numberOfSeats);
+  numberOfSeats[8] = 20;
+  print(numberOfSeats);
+
+  //Conditional statements
+  int mathScore = 70;
+  int arabicScore = 50;
+  bool isMathScoreHigherThanArabic = mathScore > arabicScore;
+  bool isMathScoreSmallerThanArabic = mathScore < arabicScore;
+  bool isMathScoreEqualArabic = mathScore == arabicScore;
+  bool isMathScoreNotEqualArabic = mathScore != arabicScore;
+  print(isMathScoreHigherThanArabic);
+  print(isMathScoreSmallerThanArabic);
+  print(isMathScoreEqualArabic);
+  print(isMathScoreNotEqualArabic);
+
+  //if condition
+  bool isWeatherGood = true;
+  if (isWeatherGood) {
+    print('Go To the Sea');
+  }
+  int englishScore = 65;
+  int physicsScore = 90;
+  int biologyScore = 100;
+  bool hasPassedEnglish = englishScore >= 50;
+  bool hasPassedPhysics = physicsScore >= 50;
+  bool hasPassedBiology = biologyScore >= 50;
+  //if else
+  if (hasPassedEnglish && hasPassedPhysics && hasPassedBiology) {
+    print('Congrats you passed');
+  } else {
+    print('unfortunately you failed in all Exams');
+  }
+  //nested if
+  bool isAdmin = true;
+  bool isModerator = false;
+  bool isGroupEspert = true;
+
+  if (isAdmin) {
+    print('you have an Admin privilage');
+    if (isGroupEspert) {
+      print('you are also a group espert');
+    }
+  } else if (isModerator) {
+    print('you have a moderator privilage');
+  } else {
+    print('you are a user');
+  }
+
+  //Switch case
+  String grade = 'G';
+  switch (grade) {
+    case 'A':
+      print('Your grade is Excellent');
+      break;
+    case 'B':
+      print('Your grade is good');
+      break;
+    case 'C':
+      print('Your grade is a fair');
+      break;
+    case 'D':
+      print('Your grade is Fail');
+      break;
+    default:
+      print('Invalid Grade');
+      break;
+  }
+
+  // null safety
+  int number11; //non-nullable by default
+  // int? number11; (nullable)
+  int number22 = 15;
+
+  /// int resultNull = number11 * number22;
+  //The non-nullable local variable 'number11' must be assigned before it can be used. (Documentation)
+  // int resultNull = number11! * number22;
+
+  //for loop
+  for (int i = 0; i < studentsNames.length; i++) {
+    print(studentsNames[i]);
+    print(i);
+  }
+  //while loop
+  bool isRunning = false;
+  while (isRunning) {
+    print(studentsNames);
+  }
+
+  //do while
+  do {
+    print(studentsNames);
+  } while (isRunning);
+  //for in
+  for (var item in sistersNames) {
+    print(item);
+  }
+
+  // for each
+  List<String> favColors = ['Black', 'White', 'Blue'];
+  favColors.forEach((var item) {
+    print(item);
+  });
+  favColors.forEach((element) {
+    print(element.toUpperCase());
+  });
+
+  printMyStory();
+  print(sumTwoNumbers() * 30);
+}
+
+//Functions
+void printMyStory() {
+  print('My name is Aml');
+  print('i\'m 24 years old');
+  print('i\'m a computer Engineer');
+}
+
+int sumTwoNumbers() {
+  int num1 = 10;
+  int num2 = 20;
+  return num1 + num2;
 }
 
 // هنا هي نقطة البداية اللي بيبدأ منها التشغيل او الرن تبع التطبيق

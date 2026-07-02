@@ -4,6 +4,7 @@
 //   print('Hello world: ${flutter_training_dart.calculate()}!');
 // }
 
+// هنا هي نقطة البداية اللي بيبدأ منها التشغيل او الرن تبع التطبيق
 void main() {
   //هنا رح نكتب مجموعة الأكواد أو الأوامر يعني أول ما نشوف أقواس كيرلي رح تعرف انه هنا بينكتب الكود تبع الميثود
   // لازم هنا نكتب اشياء هي pre defined يعني شغلات معرّفة لدى المترجم او تعتبر من قواعد او قوانين لغة المترجم
@@ -221,7 +222,15 @@ void main() {
   });
 
   printMyStory();
-  print(sumTwoNumbers() * 30);
+  // print(sumTwoNumbers() * 30);
+  print(sumTwoNumbers(10, 40) * 30);
+
+  print(calculateFinalPrice(800, 0));
+  print(calculateFinalPriceOptional(800));
+  print(calculateFinalPriceNamed(price: 800, discount: 10));
+  print(calculateFinalPriceBoth(10, price: 800));
+  print(calculateFinalPriceBoth(10, price: 800, discount: 10));
+
 }
 
 //Functions
@@ -231,10 +240,54 @@ void printMyStory() {
   print('i\'m a computer Engineer');
 }
 
-int sumTwoNumbers() {
-  int num1 = 10;
-  int num2 = 20;
-  return num1 + num2;
+// int sumTwoNumbers() {
+//   int num1 = 10;
+//   int num2 = 20;
+//   return num1 + num2;
+// }
+
+//parameters
+num sumTwoNumbers(int num1, num2) {
+  num result = num1 + num2;
+  return result;
 }
 
-// هنا هي نقطة البداية اللي بيبدأ منها التشغيل او الرن تبع التطبيق
+//arguments (the values that are stored in the parameters)
+
+// parameters
+double calculateFinalPrice(double price, double discount) {
+  return price - price * discount / 100;
+}
+
+//optional parameters
+double calculateFinalPriceOptional(double price, [double discount = 0]) {
+  //optional with default value for null safety
+  // لازم تنتبه ل ترتيب الباراميترز و لازم الاوبتيونال يكون بالاخر و ممكن يكون عنا اكتر من اوبتيونال باراميتر
+  return price - price * discount / 100;
+}
+
+// named parameters
+// named = optional but has names (هي نفسها الاوبشنال بس الاستدعاء بيكون عن طريق الاسم )
+//علشان نستغني عن اهمية الترتيب في الباراميترز ف احنا ممكن نستدعيهم بأسماءهم
+double calculateFinalPriceNamed({double price = 100, double discount = 0}) {
+  return price - price * discount / 100;
+}
+
+//علشان ما اخليهم اوبشنال بحط كلمة ريكوايرد
+double calculateFinalPriceNamedRequired({
+  required double price,
+  double discount = 0,
+}) {
+  return price - price * discount / 100;
+}
+
+// الحمع بين الnamed and not named parameters
+//علشان ما اخليهم اوبشنال بحط كلمة ريكوايرد
+//بس لازم الnot named يكون بالاول يعني قبل ال named سواء كان النيمد اوبشنال او ريكوايرد
+double calculateFinalPriceBoth(
+  int number, {
+  required double price,
+  double discount = 0,
+}) {
+  return price - price * discount / 100 + number;
+}

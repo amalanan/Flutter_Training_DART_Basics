@@ -47,9 +47,43 @@ void main() {
   print(isOnline);
 
   dynamic name1 = 15.5;
-  //تستخدم ل تخزين و استقبال البيانات المجهول نوعها يعني احنا مش عارفين نوعها ف نوع البيانات الاول الذي يوضع فيها يصبح هو توع الفاريبل
+  //هي تسمى weak data type
+  //لانه اي نوع يقدر يدخل فيها ف كتير بتعمل كونفليكت في الميموري و حتى في الفهم
+  //تستخدم ل تخزين و استقبال البيانات المجهول نوعها يعني احنا مش عارفين نوعها
 
-  //collection data types
+  //بتقبل كل الانواع بس عطول بيصير نوعها هو نوع الفاريبل اللي انحطت فيه
+  // و ما بتتغير خلص بيصير يعملك ايرور
+  var myName = 'aml';
+  var myAge = 15;
+  var myGpa = 15.5;
+
+  /// myGpa = 'amal';
+  // ف نوع البيانات الاول الذي يوضع فيها يصبح هو توع الفاريبل
+
+  // var text; هيك بتصير دايناميك
+  //ف انا لما استخدم الفار يفضل استخدمها و اعطيها قيمتها في نفس السطر //
+
+  ///Arithmetic operators
+  int number1 = 15;
+  int number2 = 10;
+
+  int result = number1 ~/ number2;
+  double resultDouble = number1 / number2;
+  int resultRemainder= number1 % number2;
+
+  print(result);
+  print(resultDouble);
+  print(resultRemainder);
+
+
+
+  ///Dot Operator
+  // String dotOp = 'amal';
+  // print(dotOp.);
+  // ///بيوفرلك بعض المهام اللي ممكن تقوم فيها على القيمة هاي او بيوفرلك بعض المعلومات اللي ممكن استعلمها عن القيمة هاي
+
+  
+  // collection data types
 }
 
 // هنا هي نقطة البداية اللي بيبدأ منها التشغيل او الرن تبع التطبيق

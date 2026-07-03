@@ -5,6 +5,8 @@
 // }
 
 // هنا هي نقطة البداية اللي بيبدأ منها التشغيل او الرن تبع التطبيق
+import 'human.dart';
+
 void main() {
   //هنا رح نكتب مجموعة الأكواد أو الأوامر يعني أول ما نشوف أقواس كيرلي رح تعرف انه هنا بينكتب الكود تبع الميثود
   // لازم هنا نكتب اشياء هي pre defined يعني شغلات معرّفة لدى المترجم او تعتبر من قواعد او قوانين لغة المترجم
@@ -232,13 +234,16 @@ void main() {
   print(calculateFinalPriceBoth(10, price: 800, discount: 10));
 
   Human amal = Human(
-    height: 10,
+    10,
     weight: 20,
     skinColor: 'black',
   ); //constructor by default
   print(amal.height);
   print(amal.toString());
   amal.read();
+  Human ahmed = Human(100, weight: 50, skinColor: 'Black');
+  ahmed.setNumberOfArms = 1;
+  print(ahmed.numberOfArms);
   //كل اوبجكت اله اتريبيوتس خاصة فيه
 }
 
@@ -301,24 +306,4 @@ double calculateFinalPriceBoth(
   double discount = 0,
 }) {
   return price - price * discount / 100 + number;
-}
-
-//OOP
-//classes
-class Human {
-  int numberOfArms = 2;
-  double? height;
-  double? weight;
-  String? skinColor;
-
-  //constructors
-  Human({double? height, double? weight, String? skinColor}) {
-    this.height = height;
-    this.weight = weight;
-    this.skinColor = skinColor;
-  }
-
-  void read() {
-    print('this human is reading');
-  }
 }

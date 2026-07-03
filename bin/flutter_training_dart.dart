@@ -231,8 +231,19 @@ void main() {
   print(calculateFinalPriceBoth(10, price: 800));
   print(calculateFinalPriceBoth(10, price: 800, discount: 10));
 
+  Human amal = Human(
+    height: 10,
+    weight: 20,
+    skinColor: 'black',
+  ); //constructor by default
+  print(amal.height);
+  print(amal.toString());
+  amal.read();
+  //كل اوبجكت اله اتريبيوتس خاصة فيه
 }
 
+//methods and functions
+// الميثود هو فانكشن بس متعرفة جوا كلاس
 //Functions
 void printMyStory() {
   print('My name is Aml');
@@ -290,4 +301,24 @@ double calculateFinalPriceBoth(
   double discount = 0,
 }) {
   return price - price * discount / 100 + number;
+}
+
+//OOP
+//classes
+class Human {
+  int numberOfArms = 2;
+  double? height;
+  double? weight;
+  String? skinColor;
+
+  //constructors
+  Human({double? height, double? weight, String? skinColor}) {
+    this.height = height;
+    this.weight = weight;
+    this.skinColor = skinColor;
+  }
+
+  void read() {
+    print('this human is reading');
+  }
 }

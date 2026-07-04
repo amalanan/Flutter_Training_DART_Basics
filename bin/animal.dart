@@ -1,3 +1,4 @@
+//inheritance
 class Animal {
   int numberOfLimbs = 4;
 

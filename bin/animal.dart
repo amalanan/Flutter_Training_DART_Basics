@@ -40,3 +40,31 @@ class Lion extends Animal {
     print('roaring');
   }
 }
+
+abstract class Bird {
+  //اي كلاس رح يعمله اكستندس اجبااااري ياخد كل الميثودس اللي في الابستراكت كلاس
+  int numberOfSwings = 2;
+
+  eat();
+
+  sleep() {}
+}
+
+//implements for the abstract class and other classes
+// its importance comes from overriding everything in the implemented class
+class kanari implements Bird {
+  @override
+  eat() {
+    // TODO: implement eat
+    throw UnimplementedError();
+  }
+
+  @override
+  late int numberOfSwings;
+
+  @override
+  sleep() {
+    // TODO: implement sleep
+    throw UnimplementedError();
+  }
+}

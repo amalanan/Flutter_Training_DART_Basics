@@ -6,8 +6,20 @@
 
 // هنا هي نقطة البداية اللي بيبدأ منها التشغيل او الرن تبع التطبيق
 import 'human.dart';
+import 'animal.dart';
 
 void main() {
+  Lion lionAnimal = Lion(skinColor: 'Black', weight: 60);
+  print(lionAnimal.eat());
+
+  Dog dogAnimal = Dog(skinColor: 'Black', weight: 60);
+  dogAnimal.eat();
+//polymorphism (Animal is polymor class which is متعدد الاشككال يعني ينطبق تحته الدوج و اللايون و الكات و هيك )
+  Lion scar = Lion(skinColor: 'Black', weight: 60);
+  Dog jack = Dog(skinColor: 'Black', weight: 60);
+  Cat kitty = Cat(skinColor: 'Black', weight: 60);
+  List<Animal> zooAnimals = [scar, jack, kitty];
+
   //هنا رح نكتب مجموعة الأكواد أو الأوامر يعني أول ما نشوف أقواس كيرلي رح تعرف انه هنا بينكتب الكود تبع الميثود
   // لازم هنا نكتب اشياء هي pre defined يعني شغلات معرّفة لدى المترجم او تعتبر من قواعد او قوانين لغة المترجم
   // scope for new codes يعني سكوب بين الاقواس المتعرجة بيكون جواته اوامر برمجية و اكواد و ممكن السكوب يعملك مشاكل لما تكون طالع من السكوب الداخلي للخارجي و العكس ف كتير مهم ننتبه ع الاقواس و نسكر كل سكوب قبل ما ننتقل للسكوب التاني

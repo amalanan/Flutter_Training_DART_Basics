@@ -4,7 +4,7 @@ class Animal {
   String? skinColor;
   double? weight;
 
-  Animal(this.skinColor, this.weight);
+  Animal({required this.skinColor, required this.weight});
 
   eat() {
     print('eating');
@@ -12,7 +12,12 @@ class Animal {
 }
 
 class Dog extends Animal {
-  Dog(super.skinColor, super.weight);
+  Dog({required super.skinColor, required super.weight});
+
+  @override
+  eat() {
+    print('Dog is eating');
+  }
 
   bark() {
     print('barking');
@@ -20,7 +25,7 @@ class Dog extends Animal {
 }
 
 class Cat extends Animal {
-  Cat(super.skinColor, super.weight);
+  Cat({required super.skinColor, required super.weight});
 
   meo() {
     print('meowing');
@@ -28,7 +33,8 @@ class Cat extends Animal {
 }
 
 class Lion extends Animal {
-  Lion(super.skinColor, super.weight);
+  Lion({required String skinColor, required double weight})
+    : super(skinColor: skinColor, weight: weight);
 
   roar() {
     print('roaring');

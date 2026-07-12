@@ -68,3 +68,22 @@ class kanari implements Bird {
     throw UnimplementedError();
   }
 }
+
+class Circle {
+  double radius;
+
+  late int x;
+  late int y;
+
+  Circle({required this.radius, required this.x, required this.y});
+
+  //named constructor
+  Circle.origin({required this.radius}) {
+    x = 0;
+    y = 0;
+  }
+
+  draw() {
+    print('draw this circle at x = $x and y = $y with radius = $radius');
+  }
+}

@@ -14,6 +14,7 @@ void main() {
 
   Dog dogAnimal = Dog(skinColor: 'Black', weight: 60);
   dogAnimal.eat();
+
   //polymorphism (Animal is polymor class which is متعدد الاشككال يعني ينطبق تحته الدوج و اللايون و الكات و هيك )
   Lion scar = Lion(skinColor: 'Black', weight: 60);
   Dog jack = Dog(skinColor: 'Black', weight: 60);

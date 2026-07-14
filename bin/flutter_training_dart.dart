@@ -12,7 +12,14 @@ enum Gender { male, female }
 
 // احلى استخدام للاينم هو استخدامها مع السويتش كيز لانها اصلا بتتعامل مع قيم محدودة
 // انت كدا بتحدد لليوزر انه يختار الجندر اجباري يا ميل يا فيميل ف ممنوع يحط اشي تاني غيرهم
+
 void main() {
+  //logical error
+  int num1 = 15;
+  int num2 = 20;
+  int resultOfSum = num1 + num1;
+  print(resultOfSum);
+
   Gender gender = Gender.male;
   if (gender == Gender.male) {
     print('this is a male');

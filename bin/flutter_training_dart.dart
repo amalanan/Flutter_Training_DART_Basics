@@ -20,6 +20,10 @@ void main() {
   int resultOfSum = num1 + num1;
   print(resultOfSum);
 
+  //runtime error
+  List<String> names = ['Amal'];
+  //print(names[1]);
+
   Gender gender = Gender.male;
   if (gender == Gender.male) {
     print('this is a male');

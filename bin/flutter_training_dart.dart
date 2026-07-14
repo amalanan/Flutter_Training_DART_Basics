@@ -5,6 +5,8 @@
 // }
 
 // هنا هي نقطة البداية اللي بيبدأ منها التشغيل او الرن تبع التطبيق
+import 'dart:io';
+
 import 'human.dart';
 import 'animal.dart';
 
@@ -23,6 +25,33 @@ void main() {
   //runtime error
   List<String> names = ['Amal'];
   //print(names[1]);
+  //print('amal'); //it won't see it because of the exception
+
+  try {
+    //try this code
+    print(names[1]);
+  } catch (e) {
+    //catch the expected exception that will come from the code you've just tried
+    print(e); //RangeError (length): Invalid value: Only valid value is 0: 1
+  }
+
+  try {
+    //try this code
+    print(names[1]);
+  } on RangeError catch (e) {
+    //catch the expected exception that will come from the code you've just tried
+    print(e); //RangeError (length): Invalid value: Only valid value is 0: 1
+  }
+
+
+  //unhandled exception
+  // try {
+  //   //try this code
+  //   print(names[1]);
+  // } on HttpException catch (e) {
+  //   //catch the expected exception that will come from the code you've just tried
+  //   print(e); //RangeError (length): Invalid value: Only valid value is 0: 1
+  // }
 
   Gender gender = Gender.male;
   if (gender == Gender.male) {

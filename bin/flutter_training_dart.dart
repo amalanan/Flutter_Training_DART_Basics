@@ -8,7 +8,15 @@
 import 'human.dart';
 import 'animal.dart';
 
+enum Gender { male, female }
+
+// احلى استخدام للاينم هو استخدامها مع السويتش كيز لانها اصلا بتتعامل مع قيم محدودة
+// انت كدا بتحدد لليوزر انه يختار الجندر اجباري يا ميل يا فيميل ف ممنوع يحط اشي تاني غيرهم
 void main() {
+  Gender gender = Gender.male;
+  if (gender == Gender.male) {
+    print('this is a male');
+  }
   Lion lionAnimal = Lion(skinColor: 'Black', weight: 60);
   print(lionAnimal.eat());
 
@@ -20,6 +28,21 @@ void main() {
   Dog jack = Dog(skinColor: 'Black', weight: 60);
   Cat kitty = Cat(skinColor: 'Black', weight: 60);
   List<Animal> zooAnimals = [scar, jack, kitty];
+
+  Dog dog1 = Dog(skinColor: 'Black', weight: 60);
+  dog1.walk();
+  dog1.play();
+  print(dog1.toString()); //methods of the Parent Object Class
+
+  Dog dog2 = Dog(skinColor: 'Black', weight: 60);
+  //dog2 is a reference to the Dog object
+  print(dog1 == dog2); //compare between two objects
+
+  //anonymous object //كائن ملهش اسماء
+  List<Animal> animalsList = [
+    Dog(skinColor: 'white', weight: 50),
+    Cat(skinColor: 'Black', weight: 40),
+  ];
 
   //named constructor
   Circle circle1 = Circle.origin(radius: 5);

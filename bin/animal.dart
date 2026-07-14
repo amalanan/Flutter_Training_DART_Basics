@@ -11,7 +11,17 @@ class Animal {
   }
 }
 
-class Dog extends Animal {
+// dart doesn't support the multiple inheritance
+mixin MammalsMixin {
+  //زواحف
+  walk() {}
+}
+
+mixin PetMixin {
+  play() {}
+}
+
+class Dog extends Animal with MammalsMixin, PetMixin {
   Dog({required super.skinColor, required super.weight});
 
   @override

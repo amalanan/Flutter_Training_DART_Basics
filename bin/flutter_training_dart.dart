@@ -42,7 +42,6 @@ void main() {
     //catch the expected exception that will come from the code you've just tried
     print(e); //RangeError (length): Invalid value: Only valid value is 0: 1
   }
-
   //unhandled exception
   // try {
   //   //try this code
@@ -51,7 +50,6 @@ void main() {
   //   //catch the expected exception that will come from the code you've just tried
   //   print(e); //RangeError (length): Invalid value: Only valid value is 0: 1
   // }
-
   Gender gender = Gender.male;
   if (gender == Gender.male) {
     print('this is a male');
